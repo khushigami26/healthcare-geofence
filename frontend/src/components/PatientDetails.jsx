@@ -1,12 +1,24 @@
 import { useEffect, useState } from "react";
-import { ArrowLeft, Pencil, CheckCircle2, X, Phone, UserRound, Save } from "lucide-react";
+import {
+  ArrowLeft,
+  Pencil,
+  CheckCircle2,
+  X,
+  Phone,
+  UserRound,
+  Save,
+} from "lucide-react";
 
 import api from "../services/api";
 import ActionButton from "./ActionButton";
 import GeoFenceCheck from "./GeoFenceCheck";
 import FamilyMemberList from "./FamilyMemberList";
 import LocationList from "./LocationList";
-import { validateName, validateMobile, sanitizeDigits } from "../utils/validation";
+import {
+  validateName,
+  validateMobile,
+  sanitizeDigits,
+} from "../utils/validation";
 
 function PatientDetails({ patient, onBack }) {
   const [patientDetails, setPatientDetails] = useState(null);
@@ -45,7 +57,7 @@ function PatientDetails({ patient, onBack }) {
       console.error("Failed to load patient details:", loadError);
 
       setError(
-        loadError.response?.data?.detail || "Failed to load patient details."
+        loadError.response?.data?.detail || "Failed to load patient details.",
       );
     } finally {
       setLoading(false);
@@ -110,7 +122,9 @@ function PatientDetails({ patient, onBack }) {
       setTimeout(() => setEditSuccess(""), 4000);
     } catch (saveErr) {
       console.error("Failed to update patient:", saveErr);
-      setError(saveErr.response?.data?.detail || "Failed to update patient details.");
+      setError(
+        saveErr.response?.data?.detail || "Failed to update patient details.",
+      );
     } finally {
       setSavingEdit(false);
     }
@@ -137,7 +151,7 @@ function PatientDetails({ patient, onBack }) {
 
   return (
     <div>
-      {/* SEPARATE TOP NAVIGATION BAR (Prevents overlap with title) */}
+      {/*  TOP NAVIGATION BAR */}
       <div className="details-top-nav">
         <ActionButton
           variant="ghost"
@@ -175,17 +189,30 @@ function PatientDetails({ patient, onBack }) {
         </div>
       )}
 
-      {/* EDIT PATIENT INLINE MODAL / CARD */}
+      {/* EDIT PATIENT  */}
       {isEditing && (
-        <div className="card patient-edit-card" style={{ marginBottom: 24, border: "2px solid #087f8c" }}>
+        <div
+          className="card patient-edit-card"
+          style={{ marginBottom: 24, border: "2px solid #087f8c" }}
+        >
           <div className="card-header-flex">
             <div>
-              <h3 style={{ color: "#087f8c", display: "flex", alignItems: "center", gap: 8 }}>
+              <h3
+                style={{
+                  color: "#087f8c",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 8,
+                }}
+              >
                 <Pencil size={18} /> Edit Patient Record
               </h3>
               <p>Update patient personal details and status.</p>
             </div>
-            <button className="icon-close-btn" onClick={() => setIsEditing(false)}>
+            <button
+              className="icon-close-btn"
+              onClick={() => setIsEditing(false)}
+            >
               <X size={18} />
             </button>
           </div>
@@ -205,7 +232,9 @@ function PatientDetails({ patient, onBack }) {
                     className={editErrors.name ? "input-error" : ""}
                   />
                 </div>
-                {editErrors.name && <span className="field-error-text">{editErrors.name}</span>}
+                {editErrors.name && (
+                  <span className="field-error-text">{editErrors.name}</span>
+                )}
               </div>
 
               <div className="input-group">
@@ -223,7 +252,9 @@ function PatientDetails({ patient, onBack }) {
                   />
                 </div>
                 {editErrors.mobile_number && (
-                  <span className="field-error-text">{editErrors.mobile_number}</span>
+                  <span className="field-error-text">
+                    {editErrors.mobile_number}
+                  </span>
                 )}
               </div>
 
@@ -276,7 +307,9 @@ function PatientDetails({ patient, onBack }) {
                 {patientDetails.status === "Active" ? (
                   <span className="status-active">Active</span>
                 ) : (
-                  <span className="status-inactive">{patientDetails.status}</span>
+                  <span className="status-inactive">
+                    {patientDetails.status}
+                  </span>
                 )}
               </span>
             </div>

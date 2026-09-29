@@ -47,14 +47,14 @@
 
 ## 🛠️ Technology Stack
 
-| Layer | Technology | Description |
-| :--- | :--- | :--- |
-| **Frontend Framework** | React 19 + Vite 8 | High-performance SPA frontend |
-| **Styling** | Vanilla CSS3 | Modern CSS variables, glassmorphism, responsive grids |
-| **Icons & Visuals** | Lucide React | Clean, intuitive vector icon set |
-| **Document Exports** | `jspdf`, `jspdf-autotable`, `xlsx` | PDF table rendering & native Excel workbook creation |
-| **Backend API** | FastAPI + Python 3.11 | Asynchronous, OpenAPI-documented Python backend |
-| **Database ORM** | SQLAlchemy + SQLite / PostgreSQL | Relational schema management with CASCADE relations |
+| Layer                  | Technology                         | Description                                           |
+| :--------------------- | :--------------------------------- | :---------------------------------------------------- |
+| **Frontend Framework** | React 19 + Vite 8                  | High-performance SPA frontend                         |
+| **Styling**            | Vanilla CSS3                       | Modern CSS variables, glassmorphism, responsive grids |
+| **Icons & Visuals**    | Lucide React                       | Clean, intuitive vector icon set                      |
+| **Document Exports**   | `jspdf`, `jspdf-autotable`, `xlsx` | PDF table rendering & native Excel workbook creation  |
+| **Backend API**        | FastAPI + Python 3.11              | Asynchronous, OpenAPI-documented Python backend       |
+| **Database ORM**       | SQLAlchemy + SQLite / PostgreSQL   | Relational schema management with CASCADE relations   |
 
 ---
 
@@ -96,10 +96,12 @@ healthcare-geofence/
 ## 🚀 Installation Guide
 
 ### Prerequisites
+
 - **Node.js** v18+ and **npm** v9+
 - **Python** v3.10+
 
 ### 1. Backend Setup
+
 ```bash
 # Navigate to backend directory
 cd backend
@@ -114,9 +116,11 @@ pip install -r requirements.txt
 # Start FastAPI development server
 uvicorn app.main:app --reload --port 8000
 ```
-*API Swagger Documentation will be live at `http://localhost:8000/docs`*
+
+_API Swagger Documentation will be live at `http://localhost:8000/docs`_
 
 ### 2. Frontend Setup
+
 ```bash
 # Navigate to frontend directory
 cd frontend
@@ -127,18 +131,19 @@ npm install
 # Start Vite dev server
 npm run dev
 ```
-*Frontend application will be live at `http://localhost:5173`*
+
+_Frontend application will be live at `http://localhost:5173`_
 
 ---
 
 ## 📊 Document Export Support
 
-| Document Type | PDF Export (`.pdf`) | Word Export (`.docx`) | Excel Export (`.xlsx`) |
-| :--- | :---: | :---: | :---: |
-| **Patient Master Registry** | ✅ Included | ✅ Included | ✅ Included |
-| **Geo-Fence Alert Logs** | ✅ Included | ✅ Included | ✅ Included |
-| **Monitored Zone Coordinates** | ✅ Included | ✅ Included | ✅ Included |
-| **Full Master System Audit** | ✅ Included | ✅ Included | ✅ Included |
+| Document Type                  | PDF Export (`.pdf`) | Word Export (`.docx`) | Excel Export (`.xlsx`) |
+| :----------------------------- | :-----------------: | :-------------------: | :--------------------: |
+| **Patient Master Registry**    |     ✅ Included     |      ✅ Included      |      ✅ Included       |
+| **Geo-Fence Alert Logs**       |     ✅ Included     |      ✅ Included      |      ✅ Included       |
+| **Monitored Zone Coordinates** |     ✅ Included     |      ✅ Included      |      ✅ Included       |
+| **Full Master System Audit**   |     ✅ Included     |      ✅ Included      |      ✅ Included       |
 
 ---
 
@@ -152,6 +157,6 @@ npm run dev
 
 <div align="center">
 
-Made with ❤️ for Healthcare Excellence • © 2026 CareSphere Management
+Healthcare Excellence • © 2026 CareSphere Management
 
 </div>

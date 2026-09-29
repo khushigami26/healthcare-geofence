@@ -29,7 +29,12 @@ const downloadBlob = (blob, filename) => {
 /**
  * Export Document Data to PDF
  */
-export const exportToPDF = (documentTitle, headers, rows, summaryStats = []) => {
+export const exportToPDF = (
+  documentTitle,
+  headers,
+  rows,
+  summaryStats = [],
+) => {
   const doc = new jsPDF();
   const timestamp = new Date().toLocaleString();
 
@@ -62,7 +67,8 @@ export const exportToPDF = (documentTitle, headers, rows, summaryStats = []) => 
   // Add Summary Stats Cards if available
   if (summaryStats.length > 0) {
     let xPos = 14;
-    const cardWidth = (182 - (summaryStats.length - 1) * 6) / summaryStats.length;
+    const cardWidth =
+      (182 - (summaryStats.length - 1) * 6) / summaryStats.length;
     summaryStats.forEach((stat) => {
       doc.setFillColor(242, 249, 248);
       doc.setDrawColor(223, 240, 239);
@@ -114,7 +120,7 @@ export const exportToPDF = (documentTitle, headers, rows, summaryStats = []) => 
       `CareSphere Geo-Fence Management • Page ${i} of ${pageCount}`,
       105,
       288,
-      { align: "center" }
+      { align: "center" },
     );
   }
 
@@ -125,7 +131,12 @@ export const exportToPDF = (documentTitle, headers, rows, summaryStats = []) => 
 /**
  * Export Document Data to DOCX (Word Document)
  */
-export const exportToWord = (documentTitle, headers, rows, summaryStats = []) => {
+export const exportToWord = (
+  documentTitle,
+  headers,
+  rows,
+  summaryStats = [],
+) => {
   const timestamp = new Date().toLocaleString();
 
   // Create formatted HTML content with Word XML styling
@@ -186,7 +197,7 @@ export const exportToWord = (documentTitle, headers, rows, summaryStats = []) =>
         ${rows
           .map(
             (row) =>
-              `<tr>${row.map((cell) => `<td>${cell !== null && cell !== undefined ? cell : ""}</td>`).join("")}</tr>`
+              `<tr>${row.map((cell) => `<td>${cell !== null && cell !== undefined ? cell : ""}</td>`).join("")}</tr>`,
           )
           .join("")}
       </tbody>

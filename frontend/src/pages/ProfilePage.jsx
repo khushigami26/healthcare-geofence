@@ -36,7 +36,7 @@ function ProfilePage({ user }) {
     department: user?.department || "",
   });
 
-  // Security Form State
+  // Security Form
   const [passwords, setPasswords] = useState({
     current: "",
     newPass: "",
@@ -44,7 +44,7 @@ function ProfilePage({ user }) {
   });
   const [passMessage, setPassMessage] = useState({ type: "", text: "" });
 
-  // Notification Preferences State
+  // Notification  State
   const [notifications, setNotifications] = useState({
     emailAlerts: true,
     smsAlerts: false,
@@ -136,7 +136,10 @@ function ProfilePage({ user }) {
       return;
     }
     if (passwords.newPass !== passwords.confirmPass) {
-      setPassMessage({ type: "error", text: "New password and confirmation do not match." });
+      setPassMessage({
+        type: "error",
+        text: "New password and confirmation do not match.",
+      });
       return;
     }
 
@@ -163,7 +166,7 @@ function ProfilePage({ user }) {
         </div>
       )}
 
-      {/* Hero Admin Profile Card */}
+      {/*  Admin Profile Card */}
       <div className="profile-hero-card">
         <div className="profile-hero-banner" />
 
@@ -248,7 +251,7 @@ function ProfilePage({ user }) {
         </button>
       </div>
 
-      {/* TAB 1: ACCOUNT DETAILS */}
+      {/* ACCOUNT DETAILS */}
       {activeTab === "overview" && (
         <div className="card profile-tab-card">
           <div className="card-header-flex">
@@ -257,7 +260,10 @@ function ProfilePage({ user }) {
               <p>Your authentic account information stored in the system.</p>
             </div>
             {!isEditing && (
-              <button className="action-button ghost-teal" onClick={() => setIsEditing(true)}>
+              <button
+                className="action-button ghost-teal"
+                onClick={() => setIsEditing(true)}
+              >
                 <Edit2 size={15} /> Edit Info
               </button>
             )}
@@ -265,7 +271,14 @@ function ProfilePage({ user }) {
 
           {formError && (
             <div className="auth-error" style={{ marginBottom: 16 }}>
-              <ShieldAlert size={16} style={{ display: "inline-block", verticalAlign: "middle", marginRight: 6 }} />
+              <ShieldAlert
+                size={16}
+                style={{
+                  display: "inline-block",
+                  verticalAlign: "middle",
+                  marginRight: 6,
+                }}
+              />
               {formError}
             </div>
           )}
@@ -283,7 +296,9 @@ function ProfilePage({ user }) {
                   placeholder="Enter full name"
                   className={fieldErrors.name ? "input-error" : ""}
                 />
-                {fieldErrors.name && <span className="field-error-text">{fieldErrors.name}</span>}
+                {fieldErrors.name && (
+                  <span className="field-error-text">{fieldErrors.name}</span>
+                )}
               </div>
 
               <div className="input-group">
@@ -297,7 +312,9 @@ function ProfilePage({ user }) {
                   placeholder="admin@example.com"
                   className={fieldErrors.email ? "input-error" : ""}
                 />
-                {fieldErrors.email && <span className="field-error-text">{fieldErrors.email}</span>}
+                {fieldErrors.email && (
+                  <span className="field-error-text">{fieldErrors.email}</span>
+                )}
               </div>
 
               <div className="input-group">
@@ -312,7 +329,9 @@ function ProfilePage({ user }) {
                   maxLength={15}
                   className={fieldErrors.phone ? "input-error" : ""}
                 />
-                {fieldErrors.phone && <span className="field-error-text">{fieldErrors.phone}</span>}
+                {fieldErrors.phone && (
+                  <span className="field-error-text">{fieldErrors.phone}</span>
+                )}
               </div>
 
               <div className="input-group">
@@ -329,7 +348,12 @@ function ProfilePage({ user }) {
 
               <div className="input-group">
                 <label>Role</label>
-                <input type="text" value="Administrator" disabled className="readonly-input" />
+                <input
+                  type="text"
+                  value="Administrator"
+                  disabled
+                  className="readonly-input"
+                />
               </div>
             </div>
 
@@ -351,26 +375,33 @@ function ProfilePage({ user }) {
         </div>
       )}
 
-      {/* TAB 2: PASSWORD & SECURITY */}
+      {/*  PASSWORD & SECURITY */}
       {activeTab === "security" && (
         <div className="card profile-tab-card">
           <h3>Change Account Password</h3>
           <p>Update your admin account password.</p>
 
           {passMessage.text && (
-            <div className={`auth-message ${passMessage.type === "error" ? "auth-error" : "auth-success"}`}>
+            <div
+              className={`auth-message ${passMessage.type === "error" ? "auth-error" : "auth-success"}`}
+            >
               {passMessage.text}
             </div>
           )}
 
-          <form onSubmit={handlePasswordChange} className="profile-form max-width-500">
+          <form
+            onSubmit={handlePasswordChange}
+            className="profile-form max-width-500"
+          >
             <div className="input-group">
               <label>Current Password *</label>
               <input
                 type="password"
                 placeholder="••••••••"
                 value={passwords.current}
-                onChange={(e) => setPasswords((p) => ({ ...p, current: e.target.value }))}
+                onChange={(e) =>
+                  setPasswords((p) => ({ ...p, current: e.target.value }))
+                }
               />
             </div>
 
@@ -380,7 +411,9 @@ function ProfilePage({ user }) {
                 type="password"
                 placeholder="••••••••"
                 value={passwords.newPass}
-                onChange={(e) => setPasswords((p) => ({ ...p, newPass: e.target.value }))}
+                onChange={(e) =>
+                  setPasswords((p) => ({ ...p, newPass: e.target.value }))
+                }
               />
             </div>
 
@@ -390,22 +423,30 @@ function ProfilePage({ user }) {
                 type="password"
                 placeholder="••••••••"
                 value={passwords.confirmPass}
-                onChange={(e) => setPasswords((p) => ({ ...p, confirmPass: e.target.value }))}
+                onChange={(e) =>
+                  setPasswords((p) => ({ ...p, confirmPass: e.target.value }))
+                }
               />
             </div>
 
-            <button type="submit" className="action-button primary" style={{ marginTop: 10 }}>
+            <button
+              type="submit"
+              className="action-button primary"
+              style={{ marginTop: 10 }}
+            >
               <Lock size={16} /> Update Password
             </button>
           </form>
         </div>
       )}
 
-      {/* TAB 3: NOTIFICATIONS */}
+      {/* NOTIFICATIONS */}
       {activeTab === "notifications" && (
         <div className="card profile-tab-card">
           <h3>Notification Preferences</h3>
-          <p>Configure notification delivery settings for your admin account.</p>
+          <p>
+            Configure notification delivery settings for your admin account.
+          </p>
 
           <div className="settings-list">
             <div className="setting-row">
@@ -417,7 +458,12 @@ function ProfilePage({ user }) {
                 <input
                   type="checkbox"
                   checked={notifications.emailAlerts}
-                  onChange={(e) => setNotifications((n) => ({ ...n, emailAlerts: e.target.checked }))}
+                  onChange={(e) =>
+                    setNotifications((n) => ({
+                      ...n,
+                      emailAlerts: e.target.checked,
+                    }))
+                  }
                 />
                 <span className="toggle-slider" />
               </label>
@@ -432,7 +478,12 @@ function ProfilePage({ user }) {
                 <input
                   type="checkbox"
                   checked={notifications.smsAlerts}
-                  onChange={(e) => setNotifications((n) => ({ ...n, smsAlerts: e.target.checked }))}
+                  onChange={(e) =>
+                    setNotifications((n) => ({
+                      ...n,
+                      smsAlerts: e.target.checked,
+                    }))
+                  }
                 />
                 <span className="toggle-slider" />
               </label>
@@ -447,7 +498,12 @@ function ProfilePage({ user }) {
                 <input
                   type="checkbox"
                   checked={notifications.desktopPush}
-                  onChange={(e) => setNotifications((n) => ({ ...n, desktopPush: e.target.checked }))}
+                  onChange={(e) =>
+                    setNotifications((n) => ({
+                      ...n,
+                      desktopPush: e.target.checked,
+                    }))
+                  }
                 />
                 <span className="toggle-slider" />
               </label>

@@ -50,9 +50,7 @@ function AuthPage({ onLogin }) {
     const email = formData.email.trim().toLowerCase();
     const password = formData.password;
 
-    // =========================
     // VALIDATION
-    // =========================
 
     if (isRegister && !name) {
       setError("Please enter your full name.");
@@ -84,9 +82,7 @@ function AuthPage({ onLogin }) {
       return;
     }
 
-    // =========================
     // REGISTER
-    // =========================
 
     if (isRegister) {
       const existingUser = localStorage.getItem("healthcareUser");
@@ -124,9 +120,7 @@ function AuthPage({ onLogin }) {
       return;
     }
 
-    // =========================
     // LOGIN
-    // =========================
 
     const savedUser = localStorage.getItem("healthcareUser");
 
@@ -167,16 +161,16 @@ function AuthPage({ onLogin }) {
 
   return (
     <div className="auth-page">
-      {/* BACKGROUND DECORATION */}
+      {/* BACKGROUND  */}
 
       <div className="auth-background-circle circle-one"></div>
 
       <div className="auth-background-circle circle-two"></div>
 
       <div className="auth-container">
-        {/* =====================================
+        {/* 
             LEFT BRAND PANEL
-        ====================================== */}
+         */}
 
         <div className="auth-brand-panel">
           {/* LOGO */}
@@ -244,9 +238,9 @@ function AuthPage({ onLogin }) {
           </div>
         </div>
 
-        {/* =====================================
+        {/* 
             RIGHT FORM PANEL
-        ====================================== */}
+         */}
 
         <div className="auth-form-panel">
           <div className="auth-form-wrapper">
@@ -396,7 +390,7 @@ function AuthPage({ onLogin }) {
               </button>
             </form>
 
-            {/* SWITCH LOGIN / REGISTER */}
+            {/*  LOGIN / REGISTER */}
 
             <div className="auth-switch">
               <span>

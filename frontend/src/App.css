@@ -1,6 +1,5 @@
-/* =========================
-   AUTH PAGE
-========================= */
+/*   AUTH PAGE
+*/
 
 .auth-page {
   min-height: 100vh;
@@ -334,9 +333,9 @@
   display: none;
 }
 
-/* =========================
+/* 
    DASHBOARD
-========================= */
+ */
 
 .dashboard-layout {
   min-height: 100vh;
@@ -970,9 +969,9 @@
   gap: 20px;
 }
 
-/* =========================
+/* 
    EXISTING PROJECT STYLES
-========================= */
+*/
 
 .card {
   background: white;
@@ -1323,9 +1322,9 @@
   padding: 25px;
 }
 
-/* =========================
+/*
    RESPONSIVE
-========================= */
+ */
 
 @media (max-width: 1000px) {
   .dashboard-stats {
@@ -2338,9 +2337,9 @@
   }
 }
 
-/* ==========================================================================
+/* 
    PROFILE SECTION ENHANCEMENTS
-   ========================================================================== */
+   */
 
 .profile-container {
   display: flex;
@@ -2501,10 +2500,22 @@
   flex-shrink: 0;
 }
 
-.p-stat-icon.blue { background: #eff6ff; color: #2563eb; }
-.p-stat-icon.green { background: #ecfdf5; color: #059669; }
-.p-stat-icon.purple { background: #f5f3ff; color: #7c3aed; }
-.p-stat-icon.orange { background: #fff7ed; color: #ea580c; }
+.p-stat-icon.blue {
+  background: #eff6ff;
+  color: #2563eb;
+}
+.p-stat-icon.green {
+  background: #ecfdf5;
+  color: #059669;
+}
+.p-stat-icon.purple {
+  background: #f5f3ff;
+  color: #7c3aed;
+}
+.p-stat-icon.orange {
+  background: #fff7ed;
+  color: #ea580c;
+}
 
 .profile-stat-card strong {
   display: block;
@@ -2657,8 +2668,12 @@
   color: #15803d;
 }
 
-.icon-green { color: #16a34a; }
-.icon-gray { color: #9ca3af; }
+.icon-green {
+  color: #16a34a;
+}
+.icon-gray {
+  color: #9ca3af;
+}
 
 .sessions-list {
   display: flex;
@@ -2750,9 +2765,9 @@
   color: #475569;
 }
 
-/* ==========================================================================
+/* 
    SETTINGS PAGE, THEME TOGGLE & DOCUMENT EXPORT UI
-   ========================================================================== */
+   */
 
 .settings-container {
   display: flex;
@@ -2822,19 +2837,53 @@
   background: #f8fafc;
 }
 
-.light-preview .preview-header { grid-column: span 2; background: #ffffff; border-bottom: 1px solid #e2e8f0; }
-.light-preview .preview-sidebar { background: #ffffff; border-right: 1px solid #e2e8f0; }
-.light-preview .preview-bar { height: 12px; background: #087f8c; border-radius: 3px; margin-bottom: 6px; }
-.light-preview .preview-card { height: 45px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 4px; }
+.light-preview .preview-header {
+  grid-column: span 2;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+.light-preview .preview-sidebar {
+  background: #ffffff;
+  border-right: 1px solid #e2e8f0;
+}
+.light-preview .preview-bar {
+  height: 12px;
+  background: #087f8c;
+  border-radius: 3px;
+  margin-bottom: 6px;
+}
+.light-preview .preview-card {
+  height: 45px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
 
 .dark-preview {
   background: #0f172a;
 }
 
-.dark-preview .preview-header { grid-column: span 2; background: #1e293b; border-bottom: 1px solid #334155; }
-.dark-preview .preview-sidebar { background: #1e293b; border-right: 1px solid #334155; }
-.dark-preview .preview-bar { height: 12px; background: #14b8a6; border-radius: 3px; margin-bottom: 6px; }
-.dark-preview .preview-card { height: 45px; background: #1e293b; border: 1px solid #334155; border-radius: 4px; }
+.dark-preview .preview-header {
+  grid-column: span 2;
+  background: #1e293b;
+  border-bottom: 1px solid #334155;
+}
+.dark-preview .preview-sidebar {
+  background: #1e293b;
+  border-right: 1px solid #334155;
+}
+.dark-preview .preview-bar {
+  height: 12px;
+  background: #14b8a6;
+  border-radius: 3px;
+  margin-bottom: 6px;
+}
+.dark-preview .preview-card {
+  height: 45px;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 4px;
+}
 
 .theme-option-label {
   display: flex;
@@ -2842,8 +2891,16 @@
   gap: 12px;
 }
 
-.theme-option-label .sun-icon { color: #f59e0b; flex-shrink: 0; margin-top: 2px; }
-.theme-option-label .moon-icon { color: #6366f1; flex-shrink: 0; margin-top: 2px; }
+.theme-option-label .sun-icon {
+  color: #f59e0b;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.theme-option-label .moon-icon {
+  color: #6366f1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
 
 .theme-option-label strong {
   display: block;
@@ -2922,21 +2979,27 @@
   background: #fff5f5;
   color: #b91c1c;
 }
-.pdf-btn:hover { background: #fee2e2; }
+.pdf-btn:hover {
+  background: #fee2e2;
+}
 
 .word-btn {
   border-color: #93c5fd;
   background: #eff6ff;
   color: #1d4ed8;
 }
-.word-btn:hover { background: #dbeafe; }
+.word-btn:hover {
+  background: #dbeafe;
+}
 
 .excel-btn {
   border-color: #86efac;
   background: #f0fdf4;
   color: #15803d;
 }
-.excel-btn:hover { background: #dcfce7; }
+.excel-btn:hover {
+  background: #dcfce7;
+}
 
 .export-action-button strong {
   display: block;
@@ -2969,7 +3032,7 @@
   right: 0;
   bottom: 0;
   background-color: #cbd5e1;
-  transition: .2s;
+  transition: 0.2s;
   border-radius: 24px;
 }
 
@@ -2981,7 +3044,7 @@
   left: 3px;
   bottom: 3px;
   background-color: white;
-  transition: .2s;
+  transition: 0.2s;
   border-radius: 50%;
 }
 
@@ -3059,9 +3122,9 @@ input:checked + .toggle-slider:before {
   border: 1px solid #fecaca;
 }
 
-/* ==========================================================================
+/* 
    GLOBAL DARK MODE SYSTEM OVERRIDES ([data-theme="dark"])
-   ========================================================================== */
+   */
 
 [data-theme="dark"] body,
 [data-theme="dark"] .dashboard-layout {
@@ -3113,9 +3176,9 @@ input:checked + .toggle-slider:before {
   color: #f8fafc !important;
 }
 
-/* ==========================================================================
+/* 
    DARK MODE HIGH CONTRAST TYPOGRAPHY
-   ========================================================================== */
+  */
 
 [data-theme="dark"] h1,
 [data-theme="dark"] h2,
@@ -3187,9 +3250,9 @@ input:checked + .toggle-slider:before {
   font-weight: 800 !important;
 }
 
-/* ==========================================================================
+/* 
    TOP NAVIGATION & BACK BUTTON OVERLAP FIX
-   ========================================================================== */
+   */
 
 .details-top-nav {
   display: flex;
@@ -3264,9 +3327,9 @@ input:checked + .toggle-slider:before {
   color: #f8fafc !important;
 }
 
-/* ==========================================================================
+/* 
    COMPREHENSIVE DARK MODE COLOR CORRECTIONS
-   ========================================================================== */
+   */
 
 /* 1. HEADER SEARCH BAR */
 [data-theme="dark"] .header-search {
@@ -3501,9 +3564,9 @@ input:checked + .toggle-slider:before {
   background-color: rgba(0, 0, 0, 0.75) !important;
 }
 
-/* ==========================================================================
+/* 
    LOCATION FORM & PRESETS REDESIGN
-   ========================================================================== */
+    */
 
 .location-form-container {
   padding: 28px !important;
@@ -3712,7 +3775,3 @@ input:checked + .toggle-slider:before {
   border-color: #334155 !important;
   color: #ffffff !important;
 }
-
-
-
-

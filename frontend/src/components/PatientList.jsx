@@ -29,9 +29,7 @@ function PatientList({ onAddPatient }) {
   const [deleteTarget, setDeleteTarget] = useState(null);
   const [deleting, setDeleting] = useState(false);
 
-  // =========================
   // LOAD PATIENTS
-  // =========================
 
   const loadPatients = async () => {
     try {
@@ -55,9 +53,7 @@ function PatientList({ onAddPatient }) {
     loadPatients();
   }, []);
 
-  // =========================
-  // SEARCH + FILTER
-  // =========================
+  // SEARCH / FILTER
 
   useEffect(() => {
     let result = [...patients];
@@ -80,9 +76,7 @@ function PatientList({ onAddPatient }) {
     setFilteredPatients(result);
   }, [search, statusFilter, patients]);
 
-  // =========================
   // DELETE PATIENT
-  // =========================
 
   const openDeleteDialog = (patient) => {
     setDeleteTarget({ id: patient.id, name: patient.name });
@@ -118,17 +112,13 @@ function PatientList({ onAddPatient }) {
     }
   };
 
-  // =========================
   // VIEW PATIENT
-  // =========================
 
   const handleView = (patientId) => {
     navigate(`/patients/${patientId}`);
   };
 
-  // =========================
   // LOADING
-  // =========================
 
   if (loading) {
     return (
@@ -142,9 +132,7 @@ function PatientList({ onAddPatient }) {
     );
   }
 
-  // =========================
   // PAGE
-  // =========================
 
   return (
     <div>
@@ -284,7 +272,12 @@ function PatientList({ onAddPatient }) {
             </p>
 
             {!search && statusFilter === "All" && (
-              <ActionButton variant="primary" size="sm" icon={Plus} onClick={onAddPatient}>
+              <ActionButton
+                variant="primary"
+                size="sm"
+                icon={Plus}
+                onClick={onAddPatient}
+              >
                 Add patient
               </ActionButton>
             )}
